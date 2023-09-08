@@ -9,4 +9,8 @@ inputs:
 outputs:
   time: # id of output
     description: 'The time we greeted you'
-runs: echo ${{ inputs.who-to-greet }}
+runs: 
+using: "composite"
+  steps:
+    - run: echo Hello ${{ inputs.who-to-greet }}.
+      shell: bash
